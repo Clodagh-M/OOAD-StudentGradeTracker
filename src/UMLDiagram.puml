@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam classAttributeIconSize 0
+
+class Student {
+
+studentId: String
+name: String
+email: String
+course: Course
+
+getGPA(): double
+getCourses(): List<Course>
+
+}
+
+enum Course {
+
+
+
+}
+
+class Grade {
+
+gradeId: String
+studentId: String
+course: Course
+score: double
+
+calculatePercentage(): double
+
+}
+
+class GradeTracker {
+
+students: List<Student>
+courses: List<Course>
+grades: List<Grade>
+calculator: GradeCalculator
+
+addStudent(): void
+addCourse(): void
+addGrade(): void
+generateReport(): void
+main(): void
+
+}
+
+class GradeCalculator {
+
+calculateGPA(): double
+calculateAverage(): double
+getGradePoints(): double
+
+}
+
+Student "many" --* "1" Course : has
+Student "many" --* "1" Grade : has
+
+@enduml
