@@ -16,8 +16,6 @@ getCourses(): List<Course>
 
 enum Course {
 
-
-
 }
 
 class Grade {
@@ -38,8 +36,6 @@ courses: List<Course>
 grades: List<Grade>
 calculator: GradeCalculator
 
-addStudent(): void
-addCourse(): void
 addGrade(): void
 generateReport(): void
 main(): void
