@@ -11,12 +11,7 @@ public enum Module {
     da("Data Analytics", (GradingPresets) GradingPresets.custom(Arrays.asList(0.5, 0.15, 0.35))),
     pd("Professional Development", (GradingPresets) GradingPresets.custom(Arrays.asList(0.4, 0.3, 0.3)));
 
-    private final String name;
-    private final GradingPresets gradePreset;
-
     Module(String name, GradingPresets gradePreset) {
-        this.name = name;
-        this.gradePreset = gradePreset;
     }
 
 
