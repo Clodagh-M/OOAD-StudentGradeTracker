@@ -6,11 +6,6 @@ public class Module {
     private String name;
     private ArrayList<Assignment> assignments;
 
-    public Module(String name, ArrayList<Assignment> assignments) {
-        this.name = name;
-        this.assignments = assignments != null ? assignments : new ArrayList<>();
-    }
-
     public Module(String name) {
         this.name = name;
         this.assignments = new ArrayList<>();
