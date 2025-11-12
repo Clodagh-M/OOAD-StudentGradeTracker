@@ -3,7 +3,7 @@ package main.model;
 public class Assignment {
     private String name;
 
-    private double score;
+    private  double score;
 
     private double maxScore;
 
