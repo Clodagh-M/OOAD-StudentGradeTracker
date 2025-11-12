@@ -55,6 +55,7 @@ public class GradeTrackerUI {
                         assignment.getPercentage());
             }
             System.out.println();
+
         }
     }
 
