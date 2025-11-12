@@ -6,16 +6,7 @@ public class Module {
     private String name;
     private ArrayList<Assignment> assignments;
 
-    public Module(String name, ArrayList<Assignment> assignments) {
-        this.name = name;
-        this.assignments = assignments;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Module(String name) {
         this.name = name;
     }
 
@@ -30,5 +21,13 @@ public class Module {
     public void addModule(Assignment assignment) {
         this.assignments.add(assignment);
     }
+
+    public void displayAssignments(){
+        System.out.println("Module Name: " + this.name);
+        for(Assignment assignment:assignments){
+            System.out.println("Assignment Name: " + assignment.getName());
+        }
+    }
+
 
 }
