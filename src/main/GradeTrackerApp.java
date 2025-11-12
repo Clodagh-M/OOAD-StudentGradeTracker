@@ -6,5 +6,8 @@ public class GradeTrackerApp {
     public static void main(String[] args) {
         GradeTrackerUI ui = new GradeTrackerUI();
         ui.start();
+
+
+
     }
 }

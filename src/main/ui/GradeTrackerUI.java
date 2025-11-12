@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import main.model.*;
 
+import static main.model.Assignment.calculateGradeLeft;
+
 public class GradeTrackerUI {
     private Course course;
     private Scanner scanner;
@@ -39,6 +41,7 @@ public class GradeTrackerUI {
     private void viewOverallGrade() {
         System.out.printf("\nOverall Course Grade: %.2f%%\n", course.getOverallGrade());
     }
+
 
     private void viewModuleGrades() {
         System.out.println("\n=== Module Grades ===");
@@ -135,9 +138,12 @@ public class GradeTrackerUI {
                     break;
                 case 4:
 
+                    break;
+
                 case 5:
                     System.out.println("Goodbye!");
                     return;
+
                 default:
                     System.out.println("Invalid option!");
             }
