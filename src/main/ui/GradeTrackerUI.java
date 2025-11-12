@@ -26,7 +26,6 @@ public class GradeTrackerUI {
         OOAD.addAssignment(new Assignment("FEO", 0, 100, 40));
         modules.add(OOAD);
 
-
         main.model.Module WF = new main.model.Module("Web Frameworks");
         WF.addAssignment(new Assignment("Project", 0, 100, 100));
         modules.add(WF);

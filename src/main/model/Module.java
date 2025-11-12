@@ -24,17 +24,12 @@ public class Module {
     }
 
     public double getModuleGrade() {
-        if (assignments.isEmpty()) return 0;
-
-        double totalWeighted = 0;
-        double totalWeight = 0;
+        double totalOverall = 0;
 
         for (Assignment assignment : assignments) {
-            totalWeighted += assignment.getPercentage() * (assignment.getWeight() / 100);
-            totalWeight += assignment.getWeight();
+            totalOverall += (assignment.getScore() /100) * assignment.getWeight();
         }
-
-        return totalWeight > 0 ? totalWeighted : 0;
+        return totalOverall;
     }
 
     public void setAssignments(ArrayList<Assignment> assignments) {
