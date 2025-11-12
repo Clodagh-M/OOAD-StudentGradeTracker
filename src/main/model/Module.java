@@ -37,7 +37,24 @@ public class Module {
     }
 
     public void addAssignment(Assignment assignment) {
+        if(validateAssignments()){
         this.assignments.add(assignment);
+        }
+        else{
+            throw new IllegalArgumentException("Invalid assignment, has to be less than 100");
+        }
     }
 
+    public boolean validateAssignments() {
+        double totalWeight = 0;
+
+        for (Assignment assignment : assignments) {
+            totalWeight += assignment.getWeight();
+            if(totalWeight > 100) {
+                return false;
+            }
+
+        }
+        return true;
+    }
 }
