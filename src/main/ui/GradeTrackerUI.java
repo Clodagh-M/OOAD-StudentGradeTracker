@@ -47,10 +47,11 @@ public class GradeTrackerUI {
 
             // Show individual assignments
             for (Assignment assignment : module.getAssignments()) {
-                System.out.printf("  - %s: %.1f/%.0f (%.1f%%)\n",
+                System.out.printf("  - %s: %.1f/%.0f\n",
                         assignment.getName(),
                         assignment.getScore(),
                         assignment.getMaxScore());
+//                        assignment.getPercentage());
             }
             System.out.println();
         }
@@ -105,6 +106,7 @@ public class GradeTrackerUI {
 
         selectedAssignment.setScore(newScore);
         System.out.println("Score updated successfully!");
+//        System.out.printf("New percentage: %.1f%%\n", selectedAssignment.getPercentage());
     }
 
     private void showMainMenu() {
@@ -113,8 +115,10 @@ public class GradeTrackerUI {
             System.out.println("1. View Overall Grade");
             System.out.println("2. View Module Grades");
             System.out.println("3. Update Assignment Score");
-            System.out.println("4. Exit");
+            System.out.println("3. Calculate To Pass Module");
+            System.out.println("5. Exit");
             System.out.print("Choose option: ");
+
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -130,6 +134,8 @@ public class GradeTrackerUI {
                     updateAssignmentScore();
                     break;
                 case 4:
+
+                case 5:
                     System.out.println("Goodbye!");
                     return;
                 default:
