@@ -119,7 +119,6 @@ public class GradeTrackerUI {
             System.out.println("5. Exit");
             System.out.print("Choose option: ");
 
-
             int choice = scanner.nextInt();
             scanner.nextLine();
 
