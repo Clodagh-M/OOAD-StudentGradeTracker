@@ -53,7 +53,6 @@ public class Module {
             if(totalWeight > 100) {
                 return false;
             }
-
         }
         return true;
     }
