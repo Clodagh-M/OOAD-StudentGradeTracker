@@ -25,4 +25,20 @@ public class Course {
         }
         return totalWeight > 0 ? (totalWeight / totalWeight) * 100 : 0;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Module> getModules() {
+        return modules;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setModules(List<Module> modules) {
+        this.modules = modules;
+    }
 }
