@@ -68,7 +68,7 @@ public class GradeTrackerUI {
     private void viewModuleGrades() {
         System.out.println("\n=== Module Grades ===");
         for (main.model.Module module : course.getModules()) {
-            System.out.printf("%s: %.2f%%\n", module.getName(), module.getModuleGrade());
+            System.out.printf("%s\n", module.getName());
 
             // Show individual assignments
             for (Assignment assignment : module.getAssignments()) {
@@ -76,7 +76,6 @@ public class GradeTrackerUI {
                         assignment.getName(),
                         assignment.getScore(),
                         assignment.getMaxScore());
-//                        assignment.getPercentage());
             }
             System.out.println();
         }
