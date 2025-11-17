@@ -35,24 +35,24 @@ public class GradeTrackerUI {
         main.model.Module DSC = new main.model.Module("Data Structures & Concurrency");
         OOAD.addAssignment(new Assignment("CA - Report", 0, 100, 50));
         OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
-        modules.add(OOAD);
+        modules.add(DSC);
 
         main.model.Module ST = new main.model.Module("Software Tools");
         OOAD.addAssignment(new Assignment("Group Project", 0, 100, 50));
         OOAD.addAssignment(new Assignment("CA", 0, 100, 50));
-        modules.add(OOAD);
+        modules.add(ST);
 
         main.model.Module DA = new main.model.Module("Data Analytics");
         OOAD.addAssignment(new Assignment("Labs", 0, 100, 15));
         OOAD.addAssignment(new Assignment("Project", 0, 100, 35));
         OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
-        modules.add(OOAD);
+        modules.add(DA);
 
         main.model.Module PD = new main.model.Module("Professional Development");
         OOAD.addAssignment(new Assignment("CA1 - CV", 0, 100, 40));
         OOAD.addAssignment(new Assignment("CA2 - Video Presentation", 0, 100, 30));
         OOAD.addAssignment(new Assignment("CA3 - Reflective Journals", 0, 100, 30));
-        modules.add(OOAD);
+        modules.add(PD);
 
         // Create the course with all modules
         course = new Course("Computing - Y3", modules);
