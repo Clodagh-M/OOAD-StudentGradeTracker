@@ -161,7 +161,7 @@ public class GradeTrackerUI {
                     for(int i=0;i<course.getModules().size();i++){
                         System.out.printf("%d. %s\n",i+1,course.getModules().get(i).getName());
                     }
-                    System.out.print("Select module: ");
+                    System.out.print("Select  a module: ");
                     int MODULEINDEX= scanner.nextInt() - 1;
                     scanner.nextLine();
                     Module selected=course.getModules().get(MODULEINDEX);
