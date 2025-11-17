@@ -33,26 +33,26 @@ public class GradeTrackerUI {
         modules.add(WF);
 
         main.model.Module DSC = new main.model.Module("Data Structures & Concurrency");
-        OOAD.addAssignment(new Assignment("CA - Report", 0, 100, 50));
-        OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
-        modules.add(OOAD);
+        DSC.addAssignment(new Assignment("CA - Report", 0, 100, 50));
+        DSC.addAssignment(new Assignment("Final Exam", 0, 100, 50));
+        modules.add(DSC);
 
         main.model.Module ST = new main.model.Module("Software Tools");
-        OOAD.addAssignment(new Assignment("Group Project", 0, 100, 50));
-        OOAD.addAssignment(new Assignment("CA", 0, 100, 50));
-        modules.add(OOAD);
+        ST.addAssignment(new Assignment("Group Project", 0, 100, 50));
+        ST.addAssignment(new Assignment("CA", 0, 100, 50));
+        modules.add(ST);
 
         main.model.Module DA = new main.model.Module("Data Analytics");
-        OOAD.addAssignment(new Assignment("Labs", 0, 100, 15));
-        OOAD.addAssignment(new Assignment("Project", 0, 100, 35));
-        OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
-        modules.add(OOAD);
+        DA.addAssignment(new Assignment("Labs", 0, 100, 15));
+        DA.addAssignment(new Assignment("Project", 0, 100, 35));
+        DA.addAssignment(new Assignment("Final Exam", 0, 100, 50));
+        modules.add(DA);
 
         main.model.Module PD = new main.model.Module("Professional Development");
-        OOAD.addAssignment(new Assignment("CA1 - CV", 0, 100, 40));
-        OOAD.addAssignment(new Assignment("CA2 - Video Presentation", 0, 100, 30));
-        OOAD.addAssignment(new Assignment("CA3 - Reflective Journals", 0, 100, 30));
-        modules.add(OOAD);
+        PD.addAssignment(new Assignment("CA1 - CV", 0, 100, 40));
+        PD.addAssignment(new Assignment("CA2 - Video Presentation", 0, 100, 30));
+        PD.addAssignment(new Assignment("CA3 - Reflective Journals", 0, 100, 30));
+        modules.add(PD);
 
         // Create the course with all modules
         course = new Course("Computing - Y3", modules);
