@@ -23,14 +23,36 @@ public class GradeTrackerUI {
         ArrayList<main.model.Module> modules = new ArrayList<>();
 
         main.model.Module OOAD = new main.model.Module("Object Oriented Analysis & Design");
-        OOAD.addAssignment(new Assignment("CA1", 0, 100, 30));
-        OOAD.addAssignment(new Assignment("CA2", 0, 100, 30));
-        OOAD.addAssignment(new Assignment("FEO", 0, 100, 40));
+        OOAD.addAssignment(new Assignment("CA1 - Essay", 0, 100, 30));
+        OOAD.addAssignment(new Assignment("CA2 - Project", 0, 100, 30));
+        OOAD.addAssignment(new Assignment("FEO - Code Review", 0, 100, 40));
         modules.add(OOAD);
 
         main.model.Module WF = new main.model.Module("Web Frameworks");
         WF.addAssignment(new Assignment("Project", 0, 100, 100));
         modules.add(WF);
+
+        main.model.Module DSC = new main.model.Module("Data Structures & Concurrency");
+        OOAD.addAssignment(new Assignment("CA - Report", 0, 100, 50));
+        OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
+        modules.add(OOAD);
+
+        main.model.Module ST = new main.model.Module("Software Tools");
+        OOAD.addAssignment(new Assignment("Group Project", 0, 100, 50));
+        OOAD.addAssignment(new Assignment("CA", 0, 100, 50));
+        modules.add(OOAD);
+
+        main.model.Module DA = new main.model.Module("Data Analytics");
+        OOAD.addAssignment(new Assignment("Labs", 0, 100, 15));
+        OOAD.addAssignment(new Assignment("Project", 0, 100, 35));
+        OOAD.addAssignment(new Assignment("Final Exam", 0, 100, 50));
+        modules.add(OOAD);
+
+        main.model.Module PD = new main.model.Module("Professional Development");
+        OOAD.addAssignment(new Assignment("CA1 - CV", 0, 100, 40));
+        OOAD.addAssignment(new Assignment("CA2 - Video Presentation", 0, 100, 30));
+        OOAD.addAssignment(new Assignment("CA3 - Reflective Journals", 0, 100, 30));
+        modules.add(OOAD);
 
         // Create the course with all modules
         course = new Course("Computing - Y3", modules);
