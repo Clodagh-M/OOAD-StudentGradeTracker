@@ -61,7 +61,7 @@ public class Assignment {
         else if(finalgrade>100){
             System.out.printf("Its is impossible to pass the module with current assignment score");
         }
-        System.out.printf("You need at least "+finalgrade+" of the remaining assessment(s) to pass overall");
+        System.out.printf("You need at least %.2f%% of the remaining assessment(s) to pass overall .%n",finalgrade);
     }
 
 
