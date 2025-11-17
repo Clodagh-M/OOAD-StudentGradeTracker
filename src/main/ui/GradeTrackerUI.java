@@ -1,9 +1,9 @@
 package main.ui;
 
-import java.lang.Module;
 import java.util.Scanner;
 import java.util.ArrayList;
 import main.model.*;
+import main.model.Module;
 
 import static main.model.Assignment.calculateGradeLeft;
 
@@ -159,13 +159,22 @@ public class GradeTrackerUI {
                     break;
                 case 4:
                     for(int i=0;i<course.getModules().size();i++){
-                        System.out.println(course.getModules().get(i).getName());
+                        System.out.printf("%d. %s\n",i+1,course.getModules().get(i).getName());
                     }
                     System.out.print("Select module: ");
                     int MODULEINDEX= scanner.nextInt() - 1;
                     scanner.nextLine();
-                    Module selected=course
-                    calculateGradeLeft(assigment,scanner);
+                    Module selected=course.getModules().get(MODULEINDEX);
+                   for(int i=0;i<selected.getAssignments().size();i++){
+                       Assignment assignment=selected.getAssignments().get(i);
+                       System.out.printf("%d. %s (weight %f.2)\n",i+1,assignment.getName(),assignment.getWeight());
+                   }
+                    System.out.print("Select assignment: ");
+                    int assigmentindex= scanner.nextInt() - 1;
+                    scanner.nextLine();
+                    Assignment selectedAssignment=selected.getAssignments().get(assigmentindex);
+
+                    calculateGradeLeft(selectedAssignment,scanner);
                     break;
 
                 case 5:
