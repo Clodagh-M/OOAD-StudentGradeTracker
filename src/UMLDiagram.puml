@@ -2,72 +2,48 @@
 'https://plantuml.com/class-diagram
 skinparam classAttributeIconSize 0
 
-class Student {
+class Course {
+    name: String
+    modules: List<Module>
 
-studentId: String
-name: String
-email: String
-course: Course
-
-getGPA(): double
-getCourses(): List<Course>
-
+    getOverallGrade(): double
 }
 
-enum Course {
+enum Module {
+    name: String
+    modules: List<Assignment>
 
-COMPUTER_SCIENCE
-MATHEMATICS
-PHYSICAL_SCIENCES
-ENGINEERING
-HUMANITIES
-SOCIAL_SCIENCES
-BUSINESS
-LANGUAGES
-
-name: String
-credits: int
-department: String
-
-getName(): String
-getCredits(): int
-getDepartment(): String
-
+    getModuleGrade(): double
+    addAssignment(): void
 }
 
-class Grade {
+class Assignment {
+    name: String
+    score: double
+    weight: double
 
-gradeId: String
-studentId: String
-course: Course
-score: double
-
-calculatePercentage(): double
-
+    calculateGradeLeft(): void
 }
 
-class GradeTracker {
+class GradeTrackerUI {
+    course: Course
+    scanner: Scanner
 
-students: List<Student>
-courses: List<Course>
-grades: List<Grade>
-calculator: GradeCalculator
-
-addGrade(): void
-generateReport(): void
-main(): void
-
+    start(): void
+    initializeCourse(): void
+    viewOverallGrade(): void
+    viewModuleGrades(): void
+    updateAssignmentScore(): void
+    showMainMenu(): void
 }
 
-class GradeCalculator {
-
-calculateGPA(): double
-calculateAverage(): double
-getGradePoints(): double
-
+class GradeTrackerApp {
+    main(): void
 }
 
-Student "many" --* "1" Course : has
-Student "many" --* "1" Grade : has
+Course "1" --> "*" Module : has a
+Module "1" --> "*" Assignment : has a
+
+
 
 @enduml
