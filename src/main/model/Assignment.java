@@ -5,13 +5,14 @@ public class Assignment {
     private Scanner scanner;
     private  double score;
 
-    private double maxScore;
+
 
     private double weight;
-    public Assignment(String name, double score, double maxScore, double weight) {
+    public Assignment(String name, double score,  double weight) {
         this.name = name;
         this.score = score;
-        this.maxScore = maxScore;
+
+        this.weight = weight;
     }
     public String getName() {
         return name;
@@ -25,12 +26,8 @@ public class Assignment {
     public void setScore(double score) {
         this.score = score;
     }
-    public double getMaxScore() {
-        return maxScore;
-    }
-    public void setMaxScore(double maxScore) {
-        this.maxScore = maxScore;
-    }
+
+
     public double getWeight() {
         return weight;
     }
@@ -40,15 +37,15 @@ public class Assignment {
 
 
 
-    public static void calculateGradeLeft(Scanner scanner){
+    public static void calculateGradeLeft(Assignment assignment, Scanner scanner){
 
         System.out.print("Please enter grade of assignment: ");
         double score=scanner.nextInt();
         scanner.nextLine();
 
-        System.out.print("Please enter weight of assignment: ");
-        double weight=scanner.nextInt();
-        scanner.nextLine();
+
+        double weight=assignment.getWeight();
+
 
         double scoreWithWeight = score*(weight/100);
         double remainingWeight = 100 - weight;
