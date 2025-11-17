@@ -118,7 +118,7 @@ public class GradeTrackerUI {
             System.out.println("1. View Overall Grade");
             System.out.println("2. View Module Grades");
             System.out.println("3. Update Assignment Score");
-            System.out.println("3. Calculate To Pass Module");
+            System.out.println("4. Calculate To Pass Module");
             System.out.println("5. Exit");
             System.out.print("Choose option: ");
 
@@ -137,7 +137,7 @@ public class GradeTrackerUI {
                     updateAssignmentScore();
                     break;
                 case 4:
-
+                    calculateGradeLeft(scanner);
                     break;
 
                 case 5:

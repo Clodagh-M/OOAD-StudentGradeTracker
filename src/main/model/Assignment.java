@@ -1,8 +1,8 @@
 package main.model;
-
+import java.util.Scanner;
 public class Assignment {
     private String name;
-
+    private Scanner scanner;
     private  double score;
 
     private double maxScore;
@@ -37,7 +37,19 @@ public class Assignment {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-    public static void calculateGradeLeft(double score, double weight){
+
+
+
+    public static void calculateGradeLeft(Scanner scanner){
+
+        System.out.print("Please enter grade of assignment: ");
+        double score=scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Please enter weight of assignment: ");
+        double weight=scanner.nextInt();
+        scanner.nextLine();
+
         double scoreWithWeight = score*(weight/100);
         double remainingWeight = 100 - weight;
         double remainingWeightPercent = remainingWeight/100;
