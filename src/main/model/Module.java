@@ -23,19 +23,6 @@ public class Module {
         return assignments;
     }
 
-    public double getModuleGrade() {
-        double totalOverall = 0;
-
-        for (Assignment assignment : assignments) {
-            totalOverall += (assignment.getScore() /100) * assignment.getWeight();
-        }
-        return totalOverall;
-    }
-
-    public void setAssignments(ArrayList<Assignment> assignments) {
-        this.assignments = assignments;
-    }
-
     public void addAssignment(Assignment assignment) {
         if(validateAssignments()){
         this.assignments.add(assignment);
