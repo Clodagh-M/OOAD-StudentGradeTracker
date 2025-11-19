@@ -63,7 +63,7 @@ public class GradeTrackerUI {
     }
 
     public void viewOverallGrade() {
-        System.out.printf("\nOverall Course Grade: %.2f%%\n", course.getOverallGrade());
+        System.out.printf("\nOverall Course Grade: %.2f%%\n", CourseCalculator.getOverallGrade(course.getModules()));
     }
 
     private void viewModuleGrades() {
