@@ -24,10 +24,6 @@ public class Course {
         this.modules = new ArrayList<>();
     }
 
-    public void addModule(Module module) {
-        modules.add(module);
-    }
-
     // Getters and setters...
     public String getName() { return name; }
     public List<Module> getModules() { return modules; }
