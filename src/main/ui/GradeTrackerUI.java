@@ -17,11 +17,11 @@ public class GradeTrackerUI {
     }
 
     public void start() {
-        initializeCourse();
+        initialiseCourse();
         showMainMenu();
     }
 
-    private void initializeCourse() {
+    private void initialiseCourse() {
         ArrayList<main.model.Module> modules = new ArrayList<>();
 
         main.model.Module OOAD = new main.model.Module("Object Oriented Analysis & Design");
