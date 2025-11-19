@@ -17,15 +17,12 @@ public class AssignmentCalculator {
             scanner.nextLine();
             assignment.setScore(score);
             if (score==0){
-                System.out.println("Only assigments enntered before zero considered");
+                System.out.println("Only assigments entered before zero considered");
                 break;
             }
             scoreWithWeight += score*(assignment.getWeight()/100);
             totalweight += assignment.getWeight();
         }
-
-
-
 
         double remainingWeight = 100 - totalweight;
         double remainingWeightPercent = remainingWeight/100;

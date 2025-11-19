@@ -81,6 +81,22 @@ public class GradeTrackerUI {
             System.out.println();
         }
     }
+    private void viewAssignmentGrades() {
+        for(int i=0;i<course.getModules().size();i++){
+            System.out.printf("%d. %s\n",i+1,course.getModules().get(i).getName());
+        }
+        System.out.print("Select  a module: ");
+        int MODULEINDEX= scanner.nextInt() - 1;
+        scanner.nextLine();
+        if(MODULEINDEX < 0 || MODULEINDEX >= course.getModules().size()){
+            System.out.println("Invalid module selection!");
+            return;
+        }
+        Module selected=course.getModules().get(MODULEINDEX);
+
+        calculateGradeLeft(selected,scanner);
+
+    }
 
 
     private void updateAssignmentScore() {
@@ -160,19 +176,7 @@ public class GradeTrackerUI {
                     updateAssignmentScore();
                     break;
                 case 4:
-                    for(int i=0;i<course.getModules().size();i++){
-                        System.out.printf("%d. %s\n",i+1,course.getModules().get(i).getName());
-                    }
-                    System.out.print("Select  a module: ");
-                    int MODULEINDEX= scanner.nextInt() - 1;
-                    scanner.nextLine();
-                    if(MODULEINDEX < 0 || MODULEINDEX >= course.getModules().size()){
-                        System.out.println("Invalid module selection!");
-                        return;
-                    }
-                    Module selected=course.getModules().get(MODULEINDEX);
-
-                    calculateGradeLeft(selected,scanner);
+                    viewAssignmentGrades();
                     break;
 
                 case 5:

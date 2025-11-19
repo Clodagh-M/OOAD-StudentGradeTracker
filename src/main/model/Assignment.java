@@ -2,11 +2,7 @@ package main.model;
 import java.util.Scanner;
 public class Assignment {
     private String name;
-    private Scanner scanner;
     private  double score;
-
-
-
     private double weight;
     public Assignment(String name, double score,  double weight) {
         this.name = name;
