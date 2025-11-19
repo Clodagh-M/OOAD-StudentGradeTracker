@@ -1,5 +1,7 @@
 package main.model;
 
+import main.service.ModuleCalculator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,31 +9,19 @@ public class Course {
     private String name;
     private List<Module> modules;
 
-    // Fix constructor to use the passed modules
     public Course(String name, List<Module> modules) {
         this.name = name;
         this.modules = modules != null ? modules : new ArrayList<>();
     }
 
-    // Add alternative constructor for empty course
     public Course(String name) {
         this.name = name;
         this.modules = new ArrayList<>();
     }
 
-    // Add overall grade calculation
-    public double getOverallGrade() {
-        if (modules.isEmpty()) return 0;
-
-        double totalGrade = 0;
-        int moduleCount = modules.size();
-
-        // Simple average of all modules (you can modify this for weighted modules)
-        for (Module module : modules) {
-            totalGrade += module.getModuleGrade();
-        }
-
-        return totalGrade / moduleCount;
+    public Course() {
+        this.name = "";
+        this.modules = new ArrayList<>();
     }
 
     public void addModule(Module module) {

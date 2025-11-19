@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import main.model.*;
 import main.model.Module;
+import main.service.CourseCalculator;
 
 
 
@@ -16,11 +17,11 @@ public class GradeTrackerUI {
     }
 
     public void start() {
-        initializeCourse();
+        initialiseCourse();
         showMainMenu();
     }
 
-    private void initializeCourse() {
+    private void initialiseCourse() {
         ArrayList<main.model.Module> modules = new ArrayList<>();
 
         main.model.Module OOAD = new main.model.Module("Object Oriented Analysis & Design");
@@ -61,10 +62,9 @@ public class GradeTrackerUI {
         System.out.println("Course initialized with " + modules.size() + " modules!");
     }
 
-    private void viewOverallGrade() {
-        System.out.printf("\nOverall Course Grade: %.2f%%\n", course.getOverallGrade());
+    public void viewOverallGrade() {
+        System.out.printf("\nOverall Course Grade: %.2f%%\n", CourseCalculator.getOverallGrade(course.getModules()));
     }
-
 
     private void viewModuleGrades() {
         System.out.println("\n=== Module Grades ===");
