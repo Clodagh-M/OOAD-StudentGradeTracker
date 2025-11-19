@@ -6,7 +6,8 @@ import main.model.*;
 import main.model.Module;
 import main.service.CourseCalculator;
 
-import static main.model.Assignment.calculateGradeLeft;
+import static main.service.AssignmentCalculator.calculateGradeLeft;
+
 
 public class GradeTrackerUI {
     private Course course;
@@ -80,6 +81,7 @@ public class GradeTrackerUI {
             System.out.println();
         }
     }
+
 
     private void updateAssignmentScore() {
         System.out.println("\n=== Update Assignment Score ===");
@@ -164,17 +166,13 @@ public class GradeTrackerUI {
                     System.out.print("Select  a module: ");
                     int MODULEINDEX= scanner.nextInt() - 1;
                     scanner.nextLine();
+                    if(MODULEINDEX < 0 || MODULEINDEX >= course.getModules().size()){
+                        System.out.println("Invalid module selection!");
+                        return;
+                    }
                     Module selected=course.getModules().get(MODULEINDEX);
-                   for(int i=0;i<selected.getAssignments().size();i++){
-                       Assignment assignment=selected.getAssignments().get(i);
-                       System.out.printf("%d. %s (weight %f.2)\n",i+1,assignment.getName(),assignment.getWeight());
-                   }
-                    System.out.print("Select assignment: ");
-                    int assigmentindex= scanner.nextInt() - 1;
-                    scanner.nextLine();
-                    Assignment selectedAssignment=selected.getAssignments().get(assigmentindex);
 
-                    calculateGradeLeft(selectedAssignment,scanner);
+                    calculateGradeLeft(selected,scanner);
                     break;
 
                 case 5:
