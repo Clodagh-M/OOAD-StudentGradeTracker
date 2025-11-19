@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import main.model.*;
 import main.model.Module;
+import main.service.CourseCalculator;
 
 import static main.model.Assignment.calculateGradeLeft;
 
@@ -61,10 +62,9 @@ public class GradeTrackerUI {
         System.out.println("Course initialized with " + modules.size() + " modules!");
     }
 
-    private void viewOverallGrade() {
+    public void viewOverallGrade() {
         System.out.printf("\nOverall Course Grade: %.2f%%\n", course.getOverallGrade());
     }
-
 
     private void viewModuleGrades() {
         System.out.println("\n=== Module Grades ===");
