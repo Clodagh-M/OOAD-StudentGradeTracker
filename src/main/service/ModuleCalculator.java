@@ -4,7 +4,7 @@ import main.model.Assignment;
 import main.model.Module;
 
 public class ModuleCalculator {
-    public double calculateModuleGrade(Module module) {
+    public double getModuleGrade(Module module) {
         double totalOverall = 0;
 
         for (Assignment assignment : module.getAssignments()) {

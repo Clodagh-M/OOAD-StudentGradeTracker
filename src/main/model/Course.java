@@ -1,5 +1,7 @@
 package main.model;
 
+import main.service.ModuleCalculator;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class Course {
 
         // Simple average of all modules (you can modify this for weighted modules)
         for (Module module : modules) {
-            totalGrade += module.getModuleGrade();
+            totalGrade += ModuleCalculator.getModuleGrade(module);
         }
 
         return totalGrade / moduleCount;
