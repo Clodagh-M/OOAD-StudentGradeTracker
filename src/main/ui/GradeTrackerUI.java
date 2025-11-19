@@ -149,7 +149,7 @@ public class GradeTrackerUI {
 
             switch (choice) {
                 case 1:
-                    CourseCalculator.viewOverallGrade();
+                    viewOverallGrade();
                     break;
                 case 2:
                     viewModuleGrades();
