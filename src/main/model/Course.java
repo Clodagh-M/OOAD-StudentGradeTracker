@@ -1,9 +1,9 @@
 package main.model;
-
 import main.service.ModuleCalculator;
-
 import java.util.ArrayList;
 import java.util.List;
+//SINGLE RESPONSIBILTY PRINCPLE
+//This stores course data.
 
 public class Course {
     private String name;
