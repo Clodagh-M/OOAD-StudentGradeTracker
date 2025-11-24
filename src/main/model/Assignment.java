@@ -1,5 +1,7 @@
 package main.model;
 import java.util.Scanner;
+//SINGLE RESPONSIBILTY PRINCPLE
+//This stores assignment data.
 public class Assignment {
     private String name;
     private  double score;
