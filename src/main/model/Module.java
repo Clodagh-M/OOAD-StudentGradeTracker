@@ -1,7 +1,7 @@
 package main.model;
-
 import java.util.ArrayList;
-
+//SINGLE RESPONSIBILTY PRINCPLE
+//This stores module data.
 public class Module {
     private String name;
     private ArrayList<Assignment> assignments;
