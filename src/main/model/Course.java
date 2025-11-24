@@ -23,6 +23,7 @@ public class Course {
         this.name = "";
         this.modules = new ArrayList<>();
     }
+     //encapsulation principle controlled method access
 
     // Getters and setters...
     public String getName() { return name; }
