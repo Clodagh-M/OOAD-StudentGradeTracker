@@ -10,6 +10,7 @@ public class Module {
         this.name = name;
         this.assignments = new ArrayList<>();
     }
+     //encapsulation principle controlled method access
 
     public String getName() {
         return name;
