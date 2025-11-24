@@ -12,6 +12,7 @@ public class Assignment {
 
         this.weight = weight;
     }
+    //encapsulation principle controlled method access
     public String getName() {
         return name;
     }
