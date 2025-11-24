@@ -5,15 +5,11 @@ skinparam classAttributeIconSize 0
 class Course {
     name: String
     modules: List<Module>
-
-    getOverallGrade(): double
 }
 
-enum Module {
+class Module {
     name: String
     modules: List<Assignment>
-
-    getModuleGrade(): double
     addAssignment(): void
 }
 
@@ -21,28 +17,46 @@ class Assignment {
     name: String
     score: double
     weight: double
-
-    calculateGradeLeft(): void
 }
 
 class GradeTrackerUI {
     course: Course
     scanner: Scanner
 
-    start(): void
-    initializeCourse(): void
     viewOverallGrade(): void
     viewModuleGrades(): void
+    viewAssignmentGrades(): void
     updateAssignmentScore(): void
     showMainMenu(): void
 }
 
+class AssignmentCalculator {
+    calculateGradeLeft(Module, Scanner): void
+}
+
+class ModuleCalculator {
+    getModuleGrade(Module): double
+}
+
+class CourseCalculator {
+    getOverallGrade(List<Module>): double
+}
+
 class GradeTrackerApp {
     main(): void
+    initializeCourse(): void
 }
 
 Course "1" --> "*" Module : has a
 Module "1" --> "*" Assignment : has a
+
+GradeTrackerUI --> CourseCalculator : uses
+GradeTrackerUI --> ModuleCalculator : uses
+GradeTrackerUI --> AssignmentCalculator : uses
+CourseCalculator --> ModuleCalculator : uses
+ModuleCalculator --> AssignmentCalculator : uses
+
+GradeTrackerApp --> GradeTrackerUI : creates
 
 
 
