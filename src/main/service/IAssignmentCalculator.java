@@ -1,4 +1,4 @@
-package main.model;
+package main.service;
 
 import main.model.Module;
 
