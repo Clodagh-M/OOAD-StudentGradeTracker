@@ -5,17 +5,18 @@ import java.util.Scanner;
 import main.model.*;
 import main.model.Module;
 import main.service.CourseCalculator;
-
-import static main.service.AssignmentCalculator.calculateGradeLeft;
-
+import main.service.IAssignmentCalculator;
+import main.service.AssignmentCalculator;
 
 public class GradeTrackerUI {
     private Course course;
     private Scanner scanner;
+    private IAssignmentCalculator assignmentCalculator;
 
     public GradeTrackerUI(Course course) {
         this.course = course;
         this.scanner = new Scanner(System.in);
+        this.assignmentCalculator = new AssignmentCalculator(scanner);
     }
 
     public void viewOverallGrade() {
@@ -49,7 +50,7 @@ public class GradeTrackerUI {
         }
         Module selected=course.getModules().get(MODULEINDEX);
 
-        calculateGradeLeft(selected,scanner);
+        assignmentCalculator.calculateGradeLeft(selected);
 
     }
 
