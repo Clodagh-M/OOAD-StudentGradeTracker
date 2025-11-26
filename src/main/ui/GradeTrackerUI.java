@@ -5,6 +5,7 @@ import java.util.Scanner;
 import main.model.*;
 import main.model.Module;
 import main.service.CourseCalculator;
+import main.service.GradeCalculator;
 
 import static main.service.AssignmentCalculator.calculateGradeLeft;
 
@@ -20,6 +21,25 @@ public class GradeTrackerUI {
 
     public void viewOverallGrade() {
         System.out.printf("\nOverall Course Grade: %.2f%%\n", CourseCalculator.getOverallGrade(course.getModules()));
+    }
+
+    // Add this new method to GradeTrackerUI:
+    private void viewModuleGrade() {
+        for(int i = 0; i < course.getModules().size(); i++) {
+            System.out.printf("%d. %s\n", i + 1, course.getModules().get(i).getName());
+        }
+        System.out.print("Select a module: ");
+        int moduleIndex = scanner.nextInt() - 1;
+        scanner.nextLine();
+
+        if(moduleIndex < 0 || moduleIndex >= course.getModules().size()) {
+            System.out.println("Invalid module selection!");
+            return;
+        }
+
+        Module selected = course.getModules().get(moduleIndex);
+        GradeCalculator gradeCalc = new GradeCalculator(scanner, GradeCalculator.CalculationMode.MODULE_GRADE);
+        gradeCalc.calculate(selected);
     }
 
     private void viewModuleGrades() {
@@ -49,7 +69,8 @@ public class GradeTrackerUI {
         }
         Module selected=course.getModules().get(MODULEINDEX);
 
-        calculateGradeLeft(selected,scanner);
+        GradeCalculator gradeCalc = new GradeCalculator(scanner, GradeCalculator.CalculationMode.PASS_REQUIREMENTS);
+        gradeCalc.calculate(selected);
 
     }
 
@@ -113,7 +134,8 @@ public class GradeTrackerUI {
             System.out.println("2. View Module Grades");
             System.out.println("3. Update Assignment Score");
             System.out.println("4. Calculate To Pass Module");
-            System.out.println("5. Exit");
+            System.out.println("5. Calculate Module Grade");
+            System.out.println("6. Exit");
             System.out.print("Choose option: ");
 
 
@@ -133,11 +155,12 @@ public class GradeTrackerUI {
                 case 4:
                     viewAssignmentGrades();
                     break;
-
                 case 5:
+                    viewModuleGrade();
+                    break;
+                case 6:
                     System.out.println("Goodbye!");
                     return;
-
                 default:
                     System.out.println("Invalid option!");
             }
