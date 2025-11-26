@@ -5,8 +5,16 @@ import main.model.Module;
 
 import java.util.Scanner;
 
-public class AssignmentCalculator {
-    public static void  calculateGradeLeft(Module module, Scanner scanner){
+public class AssignmentCalculator implements IAssignmentCalculator {
+
+    private Scanner scanner;
+
+    public AssignmentCalculator(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    @Override
+    public void  calculateGradeLeft(Module module){
         double scoreWithWeight = 0;
         double totalweight=0;
 
