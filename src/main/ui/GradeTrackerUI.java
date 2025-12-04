@@ -7,7 +7,6 @@ import main.model.Module;
 import main.service.CourseCalculator;
 import main.service.GradeCalculator;
 
-import static main.service.AssignmentCalculator.calculateGradeLeft;
 
 
 public class GradeTrackerUI {
